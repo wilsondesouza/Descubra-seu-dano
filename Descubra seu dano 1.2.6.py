@@ -3,7 +3,7 @@
 # Feito por Wilson Júnior.
 from time import sleep as s
 import Dicionários
-import os
+
 
 class Calculadora():
     print ('"Jogatina dos Putos" apresenta...')

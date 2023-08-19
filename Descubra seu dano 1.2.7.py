@@ -352,5 +352,3 @@ def main():
 if __name__ == "__main__":
     main()
 # Instâncias da classe e objetos #
-
-    

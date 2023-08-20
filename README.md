@@ -7,9 +7,9 @@ Observações: O arquivo "Descubra seu dano 2.0.py" está reduzido e diferente d
 
 UPDATE: Finalizado a primeira versão funcional do programa com interface gráfica, denominada como "Descubra seu dano 2.0.6.py". Aplicado alguns conceitos de recursividade, herança, associação e composição.
 
-# Downloads
+### ✔ Downloads
 
--[Calculadora de Dano - DST](https://www.mediafire.com/file/l7da3u7op7d3arb/DescubraSeuDano.rar/file)
+[Calculadora de Dano - DST](https://www.mediafire.com/file/l7da3u7op7d3arb/DescubraSeuDano.rar/file)
 
 ## 📚 Documentação
 -[Python](https://docs.python.org/3/)

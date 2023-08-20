@@ -1,0 +1,70 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+#interface {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+/* Estilos para os botões e grupos de botões */
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.button-group button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.button-group button:hover {
+    background-color: #0056b3;
+}
+
+#calcularDano,
+#calcularBuff,
+#calcularBoss,
+#githubLink {
+    margin-top: 10px;
+}
+
+/* Estilos para resultados */
+#calculos p {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+#calculos span {
+    font-weight: bold;
+    color: green;
+}
+
+/* GitHub link */
+#githubLink {
+    background-color: #4caf50;
+}
+
+#githubLink:hover {
+    background-color: #45a049;
+}

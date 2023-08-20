@@ -1,54 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Dano - DST</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h1>Calculadora de Dano - DST</h1>
-    <div id="interface">
-     
-        <div id="personagens">
-            <h2>Personagens</h2>
-            <div class="button-group">
-         
-            </div>
-        </div>
-        
-        <div id="armas">
-            <h2>Armas</h2>
-            <div class="button-group">
-       
-            </div>
-        </div>
-        
-        <div id="buffs">
-            <h2>Buffs</h2>
-            <div class="button-group">
-       
-            </div>
-        </div>
-        
-        <div id="bosses">
-            <h2>Bosses</h2>
-            <div class="button-group">
 
+<body>
+    <main>
+        <h1>Calculadora de Dano - DST</h1>
+
+
+
+        <div id="interface">
+
+            <div class="telaPersonagem">
+                <div class="persosonagens">
+                    <div id="personagemButtons" class="personagem-button"></div>
+                </div>
+            </div>
+
+
+            <div class="telaBoss">
+                <div id="bossesButtons" class="bosses-button"></div>
             </div>
         </div>
-        
-        <div id="calculos">
-            <h2>Resultados</h2>
-            <p>Dano Base: <span id="calculoBase">0.00</span></p>
-            <p>Dano com Buff: <span id="calculoBuff">0.00</span></p>
-            <p>Hit to Kill: <span id="calculoBoss">0.00</span></p>
-            <button id="calcularDano">Calcular Dano</button>
-            <button id="calcularBuff">Calcular Buff</button>
-            <button id="calcularBoss">Calcular Boss</button>
+
+        <div class="aside-right">
+            <div id="armaButtons" class="armas-button"></div>
         </div>
-        
-        <button id="githubLink">Visite o GitHub</button>
-    </div>
-    
+
+        <div class=aside-left>
+            <div id="buffButtons" class="buffs-button"></div>
+        </div>
+
+        <footer class="mostrarDano">
+            <button class="calcular-button" id="calcularDano">Calcular Dano</button>
+        </footer>
+        <p class="dBase">Dano Base: <span id="calculoBase">0.00</span></p>
+        <p class="dBuff">Dano com Buff: <span id="calculoBuff">0.00</span></p>
+        <p class="htk">Hit to Kill: <span id="calculoBoss">0.00</span></p>
+
+    </main>
+    <button id="toggleAside">Esconder/Expandir Armas e Buffs</button>
     <script src="script.js"></script>
 </body>
+
 </html>

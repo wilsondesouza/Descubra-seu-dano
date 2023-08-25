@@ -15,7 +15,6 @@ main {
     height: 100vh;
 }
 
-
 #interface {
     max-width: 1400px;
     margin-left: -11rem;
@@ -163,4 +162,76 @@ div {
 
 #toggleAside {
     display: none;
+}
+
+/* Responsive Mobile */
+
+@media (min-width: 300px) and (max-width: 540px) {
+
+    h1 {
+        font-size: 28px;
+    }
+    .personagens-img {
+        width:  80px ;
+        height: 80px;
+    }
+    .bosses-img {
+        width:  80px ;
+        height: 80px;
+    }
+    .aside-left {
+        max-width: 230px;
+        height: 100%;
+        position: relative;
+        margin-left: 0rem;
+        margin-top: -2rem;
+    }
+    .aside-right {
+        max-width: 340px;
+        height: 100%;
+        position: relative;
+        margin-top: -66.5rem;
+        margin-left: 3rem;
+    }
+    .bosses-button  {
+        padding: 0px 0px;
+        margin-top: 20rem;
+        margin-bottom: 2.5rem;
+    }
+    p {
+        margin-bottom: 0rem;
+        margin-top: 0rem;
+        font-size: small;
+    }
+    p.dBase{
+        margin-left:-14rem;
+        margin-top: 0rem;
+    }
+    p.dBuff {
+        margin-left: 0rem;
+        margin-top: -1rem;
+    }
+    p.htk{
+        margin-left: 13.5rem;
+        margin-top: -1rem;
+    }
+    button {
+        margin-top: 44.5rem;
+        margin-left: -26rem;
+    }
+    @media (min-width: 410px) and (max-width: 415px){
+        .aside-right {
+            margin-top: -51rem;
+        }
+        .aside-left{
+            margin-left: 3rem;
+        }
+        .bosses-button  {
+            margin-top: 15rem;
+            margin-bottom: 2.5rem;
+        }
+        button {
+            margin-top: 33.5rem;
+        }
+    }
 }

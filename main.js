@@ -88,12 +88,6 @@ class Calculadora {
     }
 }
 
-const botaoEsconder = document.getElementById("toggleAside");
-
-
-botaoEsconder.addEventListener("click", function () {
-    elementoAside.classList.toggle("hidden");
-});
 
 const calculadora = new Calculadora();
 

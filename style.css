@@ -160,10 +160,6 @@ div {
     margin-top: -2.5rem;
 }
 
-#toggleAside {
-    display: none;
-}
-
 /* Responsive Mobile */
 
 @media (min-width: 300px) and (max-width: 540px) {

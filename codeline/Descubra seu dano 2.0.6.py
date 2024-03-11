@@ -1,6 +1,6 @@
 import customtkinter as ctk
 from PIL import Image, ImageTk
-import Dicionários
+import Dicionário
 import webbrowser
 
 # Feito por Wilson Júnior. GitHub: https://github.com/wilsondesouza #
@@ -39,9 +39,9 @@ class Calculadora():
     def buffs(self, value):
         print("Buff escolhido:", value)
         self.buff = value
-        for key in Dicionários.buffsApp.keys():
+        for key in Dicionário.buffsApp.keys():
             if key.startswith(self.buff):
-                self.dano_buff = (Dicionários.buffsApp[key])  
+                self.dano_buff = (Dicionário.buffsApp[key])  
         if self.buff == 'Volt':
             print(f'Volt Goat Chaud-Froid Buff (Mob "Wet"): {self.dano_base * self.dano_buff:.2f}')              
         elif self.buff == "Ambos":
@@ -52,10 +52,10 @@ class Calculadora():
 
     def bosses(self,value):
         self.boss_usuario = value 
-        for key in Dicionários.chefesApp.keys():
+        for key in Dicionário.chefesApp.keys():
                 if key.startswith(self.boss_usuario):
                     print("Boss escolhido:", self.boss_usuario)
-                    self.hit_boss = (Dicionários.chefesApp[key])
+                    self.hit_boss = (Dicionário.chefesApp[key])
                     self.hit_boss = self.hit_boss / self.dano_buff
                     print (f'Você precisará acertar {self.hit_boss:.2f} para derrotar {self.boss_usuario}')
 
@@ -63,12 +63,12 @@ class Calculadora():
         if not self.personagem_jogado or not self.arma_usada:
             print("Escolha um personagem e uma arma antes de calcular o dano.")
             return
-        for key in Dicionários.multiplicadorApp.keys():
+        for key in Dicionário.multiplicadorApp.keys():
             if key.startswith(self.personagem_jogado):
-                self.dano_personagem = (Dicionários.multiplicadorApp[key])  
-        for key in Dicionários.weaponApp.keys():
+                self.dano_personagem = (Dicionário.multiplicadorApp[key])  
+        for key in Dicionário.weaponApp.keys():
             if key.startswith(self.arma_usada):
-                self.dano_arma = (Dicionários.weaponApp[key])
+                self.dano_arma = (Dicionário.weaponApp[key])
         self.dano_base = self.dano_personagem * self.dano_arma
         print("Dano base:", self.dano_base)
 # Classes e Funções "Backend" #
@@ -141,10 +141,10 @@ botaoCalculoBase.place(relx=0.255, rely=0.8)
 botaoCalculoBuff.place(relx=0.395, rely=0.8)
 botaoCalculoBoss.place(relx=0.535, rely=0.8)
 
-chefes_data = [{"value": i, "image_path": f"DescubraSeuDano/media/bosses/{i}.png"} for i in Dicionários.chefesApp]
-multiplicador_data = [{"value": i, "image_path": f"DescubraSeuDano/media/chars/{i}.png"} for i in Dicionários.multiplicadorApp]
-weapon_data = [{"value": i, "image_path": f"DescubraSeuDano/media/weapon/{i}.png"} for i in Dicionários.weaponApp]
-buffs_data = [{"value": i, "image_path": f"DescubraSeuDano/media/buffs/{i}.png"} for i in Dicionários.buffsApp]
+chefes_data = [{"value": i, "image_path": f"DescubraSeuDano/media/bosses/{i}.png"} for i in Dicionário.chefesApp]
+multiplicador_data = [{"value": i, "image_path": f"DescubraSeuDano/media/chars/{i}.png"} for i in Dicionário.multiplicadorApp]
+weapon_data = [{"value": i, "image_path": f"DescubraSeuDano/media/weapon/{i}.png"} for i in Dicionário.weaponApp]
+buffs_data = [{"value": i, "image_path": f"DescubraSeuDano/media/buffs/{i}.png"} for i in Dicionário.buffsApp]
 
 img = Image.open("DescubraSeuDano/media/imgs/musica.png")
 resizeImg = img.resize((30,30))

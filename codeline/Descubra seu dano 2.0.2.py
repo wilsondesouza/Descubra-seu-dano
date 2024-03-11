@@ -1,6 +1,6 @@
 import customtkinter as ctk
 from PIL import Image, ImageTk
-import Dicionários
+import Dicionário
 
 gui = ctk.CTk() 
 ctk.set_appearance_mode("dark")
@@ -23,7 +23,7 @@ def multiplicador():
     coluna = 0
     linha = 1
 
-    for i in Dicionários.multiplicador:
+    for i in Dicionário.multiplicador:
         j = Image.open(f"DescubraSeuDano/media/chars/{i}.png")
         resizeJ = j.resize((100, 100))
         finalJ = ImageTk.PhotoImage(resizeJ)
@@ -39,7 +39,7 @@ def weapon():
     coluna = 0
     linha = 1
 
-    for i in Dicionários.weapon:
+    for i in Dicionário.weapon:
         j = Image.open(f"DescubraSeuDano/media/weapon/{i}.png")
         resizeJ = j.resize((54, 54))
         finalJ = ImageTk.PhotoImage(resizeJ)

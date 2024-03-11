@@ -4,7 +4,7 @@
 from tkinter import *
 from tkinter.ttk import *
 from PIL import Image, ImageTk
-import Dicionários
+import Dicionário
 
 
 # Confguração da Interface #

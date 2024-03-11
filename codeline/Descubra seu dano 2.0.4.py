@@ -1,6 +1,6 @@
 import customtkinter as ctk
 from PIL import Image, ImageTk
-import Dicionários
+import Dicionário
 
 # Confguração da Interface #
 gui = ctk.CTk() 
@@ -29,12 +29,12 @@ class Calculadora():
         self.arma_usada = value
 
     def dano(self):
-        for key in Dicionários.multiplicadorApp.keys():
+        for key in Dicionário.multiplicadorApp.keys():
             if key.startswith(self.personagem_jogado):
-                self.dano_personagem = (Dicionários.multiplicadorApp[key])  
-        for key in Dicionários.weaponApp.keys():
+                self.dano_personagem = (Dicionário.multiplicadorApp[key])  
+        for key in Dicionário.weaponApp.keys():
             if key.startswith(self.arma_usada):
-                self.dano_arma = (Dicionários.weaponApp[key])
+                self.dano_arma = (Dicionário.weaponApp[key])
         self.dano_base = self.dano_personagem * self.dano_arma
         print("Dano base:", self.dano_base)
 # Classes e Funções "Background" #
@@ -78,8 +78,8 @@ calculo.grid(row=6, column=0)
 botaoCalculo = ctk.CTkButton(gui, text="Calcular Dano", fg_color="darkblue", hover_color=("#DB3E39", "#821D1A"), command=lambda: (calculadora.dano(), atualizarLabel())) # type: ignore
 botaoCalculo.grid(row=5, column=0, pady=10)  
 
-multiplicador_data = [{"value": i, "image_path": f"DescubraSeuDano/media/chars/{i}.png"} for i in Dicionários.multiplicadorApp]
-weapon_data = [{"value": i, "image_path": f"DescubraSeuDano/media/weapon/{i}.png"} for i in Dicionários.weaponApp]
+multiplicador_data = [{"value": i, "image_path": f"DescubraSeuDano/media/chars/{i}.png"} for i in Dicionário.multiplicadorApp]
+weapon_data = [{"value": i, "image_path": f"DescubraSeuDano/media/weapon/{i}.png"} for i in Dicionário.weaponApp]
 
 criarBotoes(frame_personagens, multiplicador_data, calculadora.personagem, (100, 100), 9)
 criarBotoes(frame_armas, weapon_data, calculadora.arma, (54, 54), 5)

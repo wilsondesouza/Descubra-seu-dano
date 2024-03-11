@@ -9,14 +9,13 @@
 </head>
 
 <body>
+    <div class="grid-container">
     <main>
         <h1>Calculadora de Dano - DST</h1>
-
-
-
         <div id="interface">
 
             <div class="telaPersonagem">
+               <h3>Personagens</h3>
                 <div class="persosonagens">
                     <div id="personagemButtons" class="personagem-button"></div>
                 </div>
@@ -24,27 +23,31 @@
 
 
             <div class="telaBoss">
+                <h3>Bosses</h3>
                 <div id="bossesButtons" class="bosses-button"></div>
             </div>
         </div>
 
         <div class="aside-right">
+            <h5>Armas</h5>
             <div id="armaButtons" class="armas-button"></div>
         </div>
 
         <div class=aside-left>
+            <h5>Buffs</h5>
             <div id="buffButtons" class="buffs-button"></div>
         </div>
 
         <footer class="mostrarDano">
             <button class="calcular-button" id="calcularDano">Calcular Dano</button>
         </footer>
-        <p class="dBase">Dano Base: <span id="calculoBase">0.00</span></p>
-        <p class="dBuff">Dano com Buff: <span id="calculoBuff">0.00</span></p>
-        <p class="htk">Hit to Kill: <span id="calculoBoss">0.00</span></p>
+        <div id="resultadoDialog" class="dialog">
+            <span id="resultadoTexto"></span>
+            <button id="fecharDialog">Fechar</button>
+        </div>
+        
 
     </main>
-    <button id="toggleAside">Esconder/Expandir Armas e Buffs</button>
     <script src="main.js"></script>
 </body>
 

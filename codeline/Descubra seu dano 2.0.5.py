@@ -1,7 +1,7 @@
 import customtkinter as ctk
 import tkinter
 from PIL import Image, ImageTk
-import Dicionários
+import Dicionário
 
 # Confguração da Interface #
 gui = ctk.CTk() 
@@ -46,12 +46,12 @@ class Calculadora():
         self.boss_usuario = float(value) / self.buff
 
     def dano(self):
-        for key in Dicionários.multiplicadorApp.keys():
+        for key in Dicionário.multiplicadorApp.keys():
             if key.startswith(self.personagem_jogado):
-                self.dano_personagem = (Dicionários.multiplicadorApp[key])  
-        for key in Dicionários.weaponApp.keys():
+                self.dano_personagem = (Dicionário.multiplicadorApp[key])  
+        for key in Dicionário.weaponApp.keys():
             if key.startswith(self.arma_usada):
-                self.dano_arma = (Dicionários.weaponApp[key])
+                self.dano_arma = (Dicionário.weaponApp[key])
         self.dano_base = self.dano_personagem * self.dano_arma
         print("Dano base:", self.dano_base)
 # Classes e Funções "Background" #
@@ -119,10 +119,10 @@ calculoBoss.place(relx=0.535, rely=0.95)
 botaoCalculoBoss = ctk.CTkButton(gui, text="Calcular Boss", fg_color="darkblue", hover_color=("#DB3E39", "#821D1A"), command=lambda: (calculadora.boss(), atualizarLabel())) # type: ignore
 botaoCalculoBoss.place(relx=0.535, rely=0.9)
 
-chefes_data = [{"value": i, "image_path": f"DescubraSeuDano/media/bosses/{i}.png"} for i in Dicionários.chefesApp]
-multiplicador_data = [{"value": i, "image_path": f"DescubraSeuDano/media/chars/{i}.png"} for i in Dicionários.multiplicadorApp]
-weapon_data = [{"value": i, "image_path": f"DescubraSeuDano/media/weapon/{i}.png"} for i in Dicionários.weaponApp]
-buffs_data = [{"value": i, "image_path": f"DescubraSeuDano/media/buffs/{i}.png"} for i in Dicionários.buffsApp]
+chefes_data = [{"value": i, "image_path": f"DescubraSeuDano/media/bosses/{i}.png"} for i in Dicionário.chefesApp]
+multiplicador_data = [{"value": i, "image_path": f"DescubraSeuDano/media/chars/{i}.png"} for i in Dicionário.multiplicadorApp]
+weapon_data = [{"value": i, "image_path": f"DescubraSeuDano/media/weapon/{i}.png"} for i in Dicionário.weaponApp]
+buffs_data = [{"value": i, "image_path": f"DescubraSeuDano/media/buffs/{i}.png"} for i in Dicionário.buffsApp]
 
 
 criarBotoes(frame_bosses, chefes_data, calculadora.boss, (100, 100), 11)

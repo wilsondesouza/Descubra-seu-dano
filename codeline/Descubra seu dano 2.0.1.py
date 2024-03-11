@@ -3,7 +3,7 @@
 # Feito por Wilson Júnior.
 import customtkinter as ctk
 from PIL import Image, ImageTk
-import Dicionários
+import Dicionário
 
 
 

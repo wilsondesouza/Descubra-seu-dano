@@ -122,7 +122,7 @@ button#calcularDano:hover {
 }
 
 /* Responsive Mobile */
-@media (min-width: 1342px) {
+@media (min-width: 1343px) {
 
     .telaPersonagem,
     .telaBoss {

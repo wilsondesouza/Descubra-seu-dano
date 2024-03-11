@@ -101,11 +101,7 @@ class Calculadora {
     }
 
 }
-<<<<<<< HEAD
-=======
 
-
->>>>>>> d9abd1bb2ffa025474bfc29d3760f5ebf17af3b7
 const calculadora = new Calculadora();
 
 // Função para gerar botões para cada opção

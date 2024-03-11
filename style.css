@@ -1,29 +1,13 @@
+/* Estilos para o corpo da página */
 body {
-    background-color: #111;
+    background-color: #111; /* Fundo cinza escuro */
     color: #fff;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
-h3 {
-    margin: 0;
-    display: grid;
-    justify-content: center;
-}
-
-h5 {
-    margin-bottom: .5vh;
-    margin-left: -2vh;
-    display: grid;
-    justify-content: center;
-}
-
-.container {
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
+/* Estilos para a tag main */
 main {
     display: flex;
     flex-direction: column;
@@ -31,182 +15,219 @@ main {
     height: 100vh;
 }
 
-.personagens-img,
-    .bosses-img {
-        width: 100px;
-        height: 100px;
-    }
-
-.armas-img {
-    width: 60px
+#interface {
+    max-width: 1400px;
+    margin-left: -11rem;
+}
+.telaPersonagem {
+    max-width: 1200px;
+    margin-left: 15rem;
+}
+.telaBoss {
+    max-width: 1200px;
+    margin-left: 15rem;
 }
 
+/* Estilos para a tag aside */
 .aside-right {
     max-width: 100px;
-    margin-top: -1rem;
-    margin-right: -.5rem;
+    margin-top: 3rem;
     color: #fff;
     position: fixed;
     right: 0;
     height: 100%;
 }
-
 .aside-left {
     max-width: 100px;
-    margin-left: .5rem;
+    margin-left: 2rem;
     margin-top: 15rem;
     color: #fff;
     position: fixed;
     left: 0;
     height: 100%;
+   
 }
 
+/* Estilos para as divs de botões */
 button {
-    background-color: #202f4f;
+    background-color: #202f4f; /* Fundo azul escuro */
     color: #fff;
     border: none;
+    padding: 10px 20px;
     margin: 5px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
     border-radius: 10%;
 }
 
-.personagem-button button:hover{
+
+.personagens-img {
+    width:  120px ;
+    height: 120px;
+}
+.personagem-button button {
+    padding: 0px 0px;
+    margin: 2px;
+}
+
+.bosses-img {
+    width:  120px ;
+    height: 120px;
+}
+.bosses-button button {
+    padding: 0px 0px;
+    margin: 2px;
+}
+
+.armas-img {
+    width: 64px;
+    height: 64px
+}
+.armas-button button {
+    padding: 0px 0px;
+    margin: 2px;
+}
+.buffs-img {
+    width: 70px;
+    height: 70px
+}
+.buffs-button button {
+    padding: 0px 0px;
+    margin: 2px;
+}
+
+
+/* Efeito de hover nos botões */
+.personagem-button button:hover {
     background-color: blue;
 }
-.bosses-button button:hover {
-    background-color: #931c1c;
-}
-.armas-button button:hover{
+.armas-button button:hover {
     background-color: green;
 }
-.buffs-button button:hover{
-    background-color: yellow;
+.buffs-button button:hover {
+    background-color: gold;
+}
+button:hover {
+    background-color: #931c1c; /* Fundo vermelho escuro */
 }
 
-button#calcularDano {
-    padding: 10px;
-    background-color: firebrick;
+.button-icon {
+    width: 30px;
+    height: 40px;
+    margin-right: 5px;
+    vertical-align: middle;
 }
 
-button#calcularDano:hover{
-    background-color: green;
+.personagem-button button.button-icon {
+    width: 90px;
+    height: 90px;
+    margin-right: 5px;
+    vertical-align: middle;
 }
 
-.dialog {
-    display: none;
-    position: fixed;
-    width: 30vh;
-    height: 20vh;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px; 
-    color: black;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    opacity: 0.9;
-    z-index: 1000;
+/* Estilos para os resultados */
+#calculoBase, #calculoBuff, #calculoBoss {
+    font-weight: bold;
+    color: green;
+}
+
+/* Estilos para os labels */
+label {
+    display: block;
     text-align: center;
 }
-
-.dialog button {
-    margin-top: 12vh;
-    margin-left: .5vh;
-    padding: 1vh;
-    position: fixed;
+p   {
+    margin-left: -50rem;
+    margin-top: -2rem;
+}
+p.dBase{
+    margin-left: -50rem;
+}
+p.dBuff {
+    margin-left: -25rem;
+    margin-top: -2.3rem;
+}
+p.htk{
+    margin-left: -1rem;
+    margin-top: -2.3rem;
+}
+/* Estilos para os contêineres */
+div {
+    margin-bottom: 20px;
+}
+.mostrarDano  {
+    margin-right: -45rem;
+    margin-top: -2.5rem;
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> d9abd1bb2ffa025474bfc29d3760f5ebf17af3b7
 /* Responsive Mobile */
-@media (min-width: 1342px) {
-    .telaPersonagem, .telaBoss{
-        margin-left: 4rem;
-        width: 1400px;
-    }
-}
 
-@media (max-width: 540px) {
-
-    @media (width: 540px) {
-
-        .telaPersonagem,
-        .telaBoss {
-            margin-left: 10vh;
-        }
-    }
+@media (min-width: 300px) and (max-width: 540px) {
 
     h1 {
-        font-size: 20px;
+        font-size: 28px;
     }
-
-    @media (max-width: 539px) {
-
-        .telaPersonagem,
-        .telaBoss {
-            margin-left: 6vh;
-        }
+    .personagens-img {
+        width:  80px ;
+        height: 80px;
     }
-
-    .aside-right,
+    .bosses-img {
+        width:  80px ;
+        height: 80px;
+    }
     .aside-left {
-        max-width: 100%;
-        position: static;
-        height: auto;
+        max-width: 230px;
+        height: 100%;
+        position: relative;
+        margin-left: 0rem;
+        margin-top: -2rem;
     }
-
     .aside-right {
-        margin-left: 4vh;
+        max-width: 340px;
+        height: 100%;
+        position: relative;
+        margin-top: -66.5rem;
+        margin-left: 3rem;
     }
-
-    .aside-left {
-        margin: -2vh;
+    .bosses-button  {
+        padding: 0px 0px;
+        margin-top: 20rem;
+        margin-bottom: 2.5rem;
     }
-
-    .personagens-img,
-    .bosses-img {
-        width: 80px;
-        height: 80px;
+    p {
+        margin-bottom: 0rem;
+        margin-top: 0rem;
+        font-size: small;
     }
-
+    p.dBase{
+        margin-left:-14rem;
+        margin-top: 0rem;
+    }
+    p.dBuff {
+        margin-left: 0rem;
+        margin-top: -1rem;
+    }
+    p.htk{
+        margin-left: 13.5rem;
+        margin-top: -1rem;
+    }
     button {
-        margin-top: 1rem;
+        margin-top: 44.5rem;
+        margin-left: -26rem;
     }
-}
-
-@media (min-width: 768px) and (max-width: 1280px) {
-
-    .personagens-img,
-    .bosses-img {
-        width: 80px;
-        height: 80px;
-    }
-
-    .aside-right,
-    .aside-left {
-        max-width: 100%;
-        margin:0;
-        position: static;
-        height: auto;
-    }
-
-    button {
-        margin-top: 1rem;
-    }
-
-    @media (min-width: 1024px) and (max-width:1280px) {
-        h5 {
-            margin-bottom: -1.5vh;
-            margin-top: 1vh;
+    @media (min-width: 410px) and (max-width: 415px){
+        .aside-right {
+            margin-top: -51rem;
+        }
+        .aside-left{
+            margin-left: 3rem;
+        }
+        .bosses-button  {
+            margin-top: 15rem;
+            margin-bottom: 2.5rem;
+        }
+        button {
+            margin-top: 33.5rem;
         }
     }
-<<<<<<< HEAD
-    
 }
-=======
-}
->>>>>>> d9abd1bb2ffa025474bfc29d3760f5ebf17af3b7

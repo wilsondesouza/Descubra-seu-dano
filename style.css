@@ -139,6 +139,15 @@ button#fecharDialog {
     }
 }
 
+@media (width: 1440px) {
+
+    .telaPersonagem,
+    .telaBoss {
+        margin-left: 5.5rem !important;
+        width: 1300px !important;
+    }
+}
+
 @media (max-width: 540px) {
 
     @media (width: 540px) {

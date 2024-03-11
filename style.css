@@ -61,6 +61,14 @@ main {
     height: 100%;
 }
 
+/* Adicione uma classe para o efeito de hover */
+.botao-hover:hover,
+.botao-hover.ativo-hover {
+    background-color: white;
+    color: #ac2626;
+}
+
+
 button {
     background-color: #202f4f;
     color: #fff;
@@ -71,19 +79,19 @@ button {
     border-radius: 10%;
 }
 
-.personagem-button button:hover {
+.personagens-button button:hover, .personagens-button button.ativo-hover {
     background-color: blue;
 }
 
-.bosses-button button:hover {
+.bosses-button button:hover, .bosses-button button.ativo-hover {
     background-color: #931c1c;
 }
 
-.armas-button button:hover {
+.armas-button button:hover, .armas-button button.ativo-hover  {
     background-color: green;
 }
 
-.buffs-button button:hover {
+.buffs-button button:hover, .buffs-button button.ativo-hover {
     background-color: yellow;
 }
 
@@ -95,6 +103,8 @@ button#calcularDano {
 button#calcularDano:hover {
     background-color: green;
 }
+
+
 
 .dialog {
     display: none;
@@ -114,11 +124,9 @@ button#calcularDano:hover {
     text-align: center;
 }
 
-.dialog button {
-    margin-top: 12vh;
-    margin-left: .5vh;
-    padding: 1vh;
-    position: fixed;
+button#fecharDialog {
+    margin-top: 1rem;
+    padding: 0.5rem;
 }
 
 /* Responsive Mobile */

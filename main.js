@@ -42,6 +42,17 @@ class Calculadora {
         this.hit_boss = 1;
     }
 
+    resetarValores() {
+        this.personagem_jogado = "";
+        this.arma_usada = "";
+        this.buff = "";
+        this.dano_personagem = 1;
+        this.dano_arma = 1;
+        this.dano_buff = 1;
+        this.dano_base = 1;
+        this.hit_boss = 1;
+    }
+
     personagem(value) {
         this.personagem_jogado = value;
     }
@@ -94,10 +105,11 @@ class Calculadora {
 
     atualizarResultados(dano_base, dano_buff, hit_boss) {
         const resultadoTexto = document.getElementById("resultadoTexto");
-        resultadoTexto.innerHTML = `Dano Base: ${dano_base.toFixed(2)}<br>Dano com Buff: ${dano_buff.toFixed(2)}<br>Hit to Kill: ${hit_boss.toFixed(2)}`;
+        resultadoTexto.innerHTML = `Personagem: ${this.personagem_jogado}<br>Arma: ${this.arma_usada}<br>Buff: ${this.buff}<br>Boss: ${this.boss_usuario}<br>Dano Base: ${dano_base.toFixed(2)}<br>Dano com Buff: ${dano_buff.toFixed(2)}<br>Hit to Kill: ${hit_boss.toFixed(2)}`;
 
         const resultadoDialog = document.getElementById("resultadoDialog");
         resultadoDialog.style.display = "block";
+        calculadora.resetarValores();
     }
 
 }
@@ -113,7 +125,7 @@ function criarBotoes(containerId, data, clickFunction, buttonClass, imgClass) {
         const button = document.createElement("button");
         const img = document.createElement("img");
         img.src = data[key].imagePath;
-        button.classList.add(buttonClass);
+        button.classList.add(buttonClass, 'botao-hover');
         button.appendChild(img);
         img.classList.add(imgClass);
         button.addEventListener("click", function () {
@@ -137,10 +149,50 @@ criarBotoes("bossesButtons", chefesApp, function (value) {
     calculadora.bosses(value);
 }, "bosses-button", "bosses-img");
 
+
+// Configurar os botões
+const personagemButtons = document.querySelectorAll('.personagens-button button');
+const armaButtons = document.querySelectorAll('.armas-button button');
+const buffsButtons = document.querySelectorAll('.buffs-button button');
+const bossesButtons = document.querySelectorAll('.bosses-button button');
+
+// Adicione um evento de clique a cada botão 
+function adicionarEventoClique(botaoLista) {
+    botaoLista.forEach(button => {
+        button.addEventListener('click', function() {
+            botaoLista.forEach(btn => {
+                btn.classList.remove('ativo-hover');
+            });
+            this.classList.add('ativo-hover');
+        });
+    });
+}
+adicionarEventoClique(personagemButtons);
+adicionarEventoClique(armaButtons);
+adicionarEventoClique(buffsButtons);
+adicionarEventoClique(bossesButtons);
+
+// Função para resetar o evento de clique dos botões
+function limparAtivoHover() {
+    personagemButtons.forEach(btn => {
+        btn.classList.remove('ativo-hover');
+    });
+    armaButtons.forEach(btn => {
+        btn.classList.remove('ativo-hover');
+    });
+    buffsButtons.forEach(btn => {
+        btn.classList.remove('ativo-hover');
+    });
+    bossesButtons.forEach(btn => {
+        btn.classList.remove('ativo-hover');
+    });
+}
+
 // Configurar o botão de calcular
 const calcularDanoButton = document.getElementById("calcularDano");
 calcularDanoButton.addEventListener("click", function () {
-    calculadora.dano();;
+    limparAtivoHover();
+    calculadora.dano();
 });
 
 

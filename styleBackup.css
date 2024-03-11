@@ -1,0 +1,237 @@
+/* Estilos para o corpo da página */
+body {
+    background-color: #111; /* Fundo cinza escuro */
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para a tag main */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+#interface {
+    max-width: 1400px;
+    margin-left: -11rem;
+}
+.telaPersonagem {
+    max-width: 1200px;
+    margin-left: 15rem;
+}
+.telaBoss {
+    max-width: 1200px;
+    margin-left: 15rem;
+}
+
+/* Estilos para a tag aside */
+.aside-right {
+    max-width: 100px;
+    margin-top: 3rem;
+    color: #fff;
+    position: fixed;
+    right: 0;
+    height: 100%;
+}
+.aside-left {
+    max-width: 100px;
+    margin-left: 2rem;
+    margin-top: 15rem;
+    color: #fff;
+    position: fixed;
+    left: 0;
+    height: 100%;
+   
+}
+
+/* Estilos para as divs de botões */
+button {
+    background-color: #202f4f; /* Fundo azul escuro */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 10%;
+}
+
+
+.personagens-img {
+    width:  120px ;
+    height: 120px;
+}
+.personagem-button button {
+    padding: 0px 0px;
+    margin: 2px;
+}
+
+.bosses-img {
+    width:  120px ;
+    height: 120px;
+}
+.bosses-button button {
+    padding: 0px 0px;
+    margin: 2px;
+}
+
+.armas-img {
+    width: 64px;
+    height: 64px
+}
+.armas-button button {
+    padding: 0px 0px;
+    margin: 2px;
+}
+.buffs-img {
+    width: 70px;
+    height: 70px
+}
+.buffs-button button {
+    padding: 0px 0px;
+    margin: 2px;
+}
+
+
+/* Efeito de hover nos botões */
+.personagem-button button:hover {
+    background-color: blue;
+}
+.armas-button button:hover {
+    background-color: green;
+}
+.buffs-button button:hover {
+    background-color: gold;
+}
+button:hover {
+    background-color: #931c1c; /* Fundo vermelho escuro */
+}
+
+.button-icon {
+    width: 30px;
+    height: 40px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.personagem-button button.button-icon {
+    width: 90px;
+    height: 90px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+/* Estilos para os resultados */
+#calculoBase, #calculoBuff, #calculoBoss {
+    font-weight: bold;
+    color: green;
+}
+
+/* Estilos para os labels */
+label {
+    display: block;
+    text-align: center;
+}
+p   {
+    margin-left: -50rem;
+    margin-top: -2rem;
+}
+p.dBase{
+    margin-left: -50rem;
+}
+p.dBuff {
+    margin-left: -25rem;
+    margin-top: -2.3rem;
+}
+p.htk{
+    margin-left: -1rem;
+    margin-top: -2.3rem;
+}
+/* Estilos para os contêineres */
+div {
+    margin-bottom: 20px;
+}
+.mostrarDano  {
+    margin-right: -45rem;
+    margin-top: -2.5rem;
+}
+
+#toggleAside {
+    display: none;
+}
+
+/* Responsive Mobile */
+
+@media (min-width: 300px) and (max-width: 540px) {
+
+    h1 {
+        font-size: 28px;
+    }
+    .personagens-img {
+        width:  80px ;
+        height: 80px;
+    }
+    .bosses-img {
+        width:  80px ;
+        height: 80px;
+    }
+    .aside-left {
+        max-width: 230px;
+        height: 100%;
+        position: relative;
+        margin-left: 0rem;
+        margin-top: -2rem;
+    }
+    .aside-right {
+        max-width: 340px;
+        height: 100%;
+        position: relative;
+        margin-top: -66.5rem;
+        margin-left: 3rem;
+    }
+    .bosses-button  {
+        padding: 0px 0px;
+        margin-top: 20rem;
+        margin-bottom: 2.5rem;
+    }
+    p {
+        margin-bottom: 0rem;
+        margin-top: 0rem;
+        font-size: small;
+    }
+    p.dBase{
+        margin-left:-14rem;
+        margin-top: 0rem;
+    }
+    p.dBuff {
+        margin-left: 0rem;
+        margin-top: -1rem;
+    }
+    p.htk{
+        margin-left: 13.5rem;
+        margin-top: -1rem;
+    }
+    button {
+        margin-top: 44.5rem;
+        margin-left: -26rem;
+    }
+    @media (min-width: 410px) and (max-width: 415px){
+        .aside-right {
+            margin-top: -51rem;
+        }
+        .aside-left{
+            margin-left: 3rem;
+        }
+        .bosses-button  {
+            margin-top: 15rem;
+            margin-bottom: 2.5rem;
+        }
+        button {
+            margin-top: 33.5rem;
+        }
+    }
+}

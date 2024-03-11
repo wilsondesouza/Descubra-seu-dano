@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Dano - DST</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <h1>Calculadora de Dano - DST</h1>
+
+
+
+        <div id="interface">
+
+            <div class="telaPersonagem">
+                <div class="persosonagens">
+                    <div id="personagemButtons" class="personagem-button"></div>
+                </div>
+            </div>
+
+
+            <div class="telaBoss">
+                <div id="bossesButtons" class="bosses-button"></div>
+            </div>
+        </div>
+
+        <div class="aside-right">
+            <div id="armaButtons" class="armas-button"></div>
+        </div>
+
+        <div class=aside-left>
+            <div id="buffButtons" class="buffs-button"></div>
+        </div>
+
+        <footer class="mostrarDano">
+            <button class="calcular-button" id="calcularDano">Calcular Dano</button>
+        </footer>
+        <p class="dBase">Dano Base: <span id="calculoBase">0.00</span></p>
+        <p class="dBuff">Dano com Buff: <span id="calculoBuff">0.00</span></p>
+        <p class="htk">Hit to Kill: <span id="calculoBoss">0.00</span></p>
+
+    </main>
+    <script src="main.js"></script>
+</body>
+
+</html>

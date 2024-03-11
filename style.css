@@ -131,6 +131,15 @@ button#calcularDano:hover {
     }
 }
 
+@media (width: 1342px) {
+
+    .telaPersonagem,
+    .telaBoss {
+        margin-left: 5.5rem;
+        width: 1300px;
+    }
+}
+
 @media (max-width: 540px) {
 
     @media (width: 540px) {

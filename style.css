@@ -220,6 +220,10 @@ div#social-media {
     margin-top: 3rem;
 }
 
+#social-media {
+    display: flex !important;
+}
+
 .tooltip-container {
     position: relative;
     cursor: pointer;

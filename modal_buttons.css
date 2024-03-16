@@ -1,0 +1,280 @@
+/* Botão Resultado */
+.card {
+    align-items: stretch;
+    flex-direction: column;
+    border-radius: 25px;
+    background: #1b233d;
+    padding: 5px;
+    overflow: hidden;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 20px 0px;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.9;
+    width: 18rem;
+}
+
+.card .top-section {
+    height: 150px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(45deg, rgb(4, 159, 187) 0%, rgb(80, 246, 255) 100%);
+    position: relative;
+}
+
+#img {
+    display: flex;
+    justify-content: center;
+}
+
+#img-resultado {
+    border-radius: 50%;
+    height: 9rem;
+
+}
+
+.card .top-section .border {
+    border-bottom-right-radius: 10px;
+    height: 30px;
+    width: 130px;
+    background: white;
+    background: #1b233d;
+    position: relative;
+    transform: skew(-40deg);
+    box-shadow: -10px -10px 0 0 #1b233d;
+}
+
+.card .bottom-section {
+    margin-top: 15px;
+}
+
+.card .bottom-section .title {
+    display: block;
+    font-size: 17px;
+    font-weight: bolder;
+    color: red;
+    text-align: center;
+    letter-spacing: 2px;
+    padding: 1rem;
+}
+
+.card .bottom-section .row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.card .bottom-section .row .item {
+    flex: 30%;
+    text-align: center;
+    padding: 5px;
+    color: rgba(170, 222, 243, 0.721);
+}
+
+.card .bottom-section .row .item .big-text {
+    font-size: 1rem;
+    display: block;
+}
+
+.card .bottom-section .row .item .regular-text {
+    font-size: 1rem;
+}
+
+.card .bottom-section .row .item:nth-child(2) {
+    border-left: 1px solid rgba(255, 255, 255, 0.126);
+    border-right: 1px solid rgba(255, 255, 255, 0.126);
+}
+
+div#button-fechar {
+    display: flex;
+    justify-content: center;
+}
+
+button#fecharDialog {
+    margin-top: 1rem;
+    padding: 0.5rem;
+}
+
+.repeat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 12px;
+    gap: 8px;
+    height: 34px;
+    width: 112px;
+    border: none;
+    background: linear-gradient(45deg, rgb(4, 159, 187) 0%, rgb(80, 246, 255) 100%);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.lable {
+    line-height: 20px;
+    font-size: 17px;
+    color: #ffffff;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+}
+
+.repeat:hover {
+    background: linear-gradient(45deg, rgb(4, 159, 187) 0%, rgb(80, 246, 255) 100%);
+}
+
+.repeat:hover .svg-icon {
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+/* Botão Error */
+.card-2 {
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(240, 15%, 9%);
+    --paragraph: hsl(0, 0%, 83%);
+    --line: hsl(240, 9%, 17%);
+    --primary: hsl(266, 92%, 58%);
+    position: relative;
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    width: 19rem;
+    background-color: hsla(240, 15%, 9%, 1);
+    background-image: radial-gradient(at 88% 40%,
+            hsla(240, 15%, 9%, 1) 0px,
+            transparent 85%),
+        radial-gradient(at 49% 30%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+        radial-gradient(at 14% 26%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+        radial-gradient(at 0% 64%, hsla(263, 93%, 56%, 1) 0px, transparent 85%),
+        radial-gradient(at 41% 94%, hsla(284, 100%, 84%, 1) 0px, transparent 85%),
+        radial-gradient(at 100% 99%, hsla(306, 100%, 57%, 1) 0px, transparent 85%);
+
+    border-radius: 1rem;
+    box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25) inset;
+    top: -60%;
+}
+
+.card-2 .card__border {
+    overflow: hidden;
+    pointer-events: none;
+
+    position: absolute;
+    z-index: -10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    background-image: linear-gradient(0deg,
+            hsl(0, 0%, 100%) -50%,
+            hsl(0, 0%, 40%) 100%);
+
+    border-radius: 1rem;
+}
+
+.card-2 .card__border::before {
+    content: "";
+    pointer-events: none;
+
+    position: fixed;
+    z-index: 200;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%), rotate(0deg);
+    transform-origin: left;
+
+    width: 200%;
+    height: 10rem;
+    background-image: linear-gradient(0deg,
+            hsla(0, 0%, 100%, 0) 0%,
+            hsl(277, 95%, 60%) 40%,
+            hsl(277, 95%, 60%) 60%,
+            hsla(0, 0%, 40%, 0) 100%);
+
+    animation: rotate 8s linear infinite;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.card-2 .card_title__container .card_title {
+    font-size: 1rem;
+    color: var(--white);
+}
+
+.card-2 .card_title__container .card_paragraph {
+    width: 100%;
+    font-size: .8rem;
+    color: var(--paragraph);
+}
+
+.card-2 .line {
+    width: 100%;
+    height: 0.1rem;
+    background-color: var(--line);
+
+    border: none;
+}
+
+.card-2 .card__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.card-2 .card__list .card__list_item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.card-2 .card__list .card__list_item .check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--primary);
+
+    border-radius: 50%;
+}
+
+.card-2 .card__list .card__list_item .list_text {
+    font-size: 0.75rem;
+    color: var(--white);
+}
+
+.card-2 .button {
+    cursor: pointer;
+
+    padding: 0.5rem;
+    width: 100%;
+    background-image: linear-gradient(0deg,
+            rgba(94, 58, 238, 1) 0%,
+            rgba(197, 107, 240, 1) 100%);
+
+    font-size: 0.75rem;
+    color: var(--white);
+
+    border: 0;
+    border-radius: 9999px;
+    box-shadow: inset 0 -2px 25px -4px var(--white);
+}

@@ -18,7 +18,6 @@ const chefesApp = {
     'Toadstool': { hitPoints: 99999, imagePath: 'media/bosses/Toadstool.png' }, 'Klaus': { hitPoints: 10000, imagePath: 'media/bosses/Klaus.png' }, 'KlausRevived': { hitPoints: 5000, imagePath: 'media/bosses/Klaus2.png' }, 'Eye of Terror': { hitPoints: 5000, imagePath: 'media/bosses/Eye of Terror.png' }, 'Spazmatism': { hitPoints: 10000, imagePath: 'media/bosses/Spazmatism.png' }, 'Retinazor': { hitPoints: 10000, imagePath: 'media/bosses/Retinazor.png' }, 'Celestial Champion': { hitPoints: 22500, imagePath: 'media/bosses/Celestial Champion.png' }, 'Reanimated Skeleton': { hitPoints: 16000, imagePath: 'media/bosses/Reanimated Skeleton.png' }, 'Treeguard': { hitPoints: 3750, imagePath: 'media/bosses/Treeguard.png' }, 'Ancient Guardian': { hitPoints: 2500, imagePath: 'media/bosses/Ancient Guardian.png' }, 'Antlion': { hitPoints: 6000, imagePath: 'media/bosses/Antlion.png' }, 'Bearger': { hitPoints: 6000, imagePath: 'media/bosses/Bearger.png' }, 'Bee Queen': { hitPoints: 22500, imagePath: 'media/bosses/Bee Queen.png' }, 'Deerclops': { hitPoints: 4000, imagePath: 'media/bosses/Deerclops.png' }, 'Dragonfly': { hitPoints: 2750, imagePath: 'media/bosses/Dragonfly.png' }, 'Lord of the Fruit Flies': { hitPoints: 1500, imagePath: 'media/bosses/Lord of the Fruit Flies.png' }, 'Malbatross': { hitPoints: 5000, imagePath: 'media/bosses/Malbatross.png' }, 'Moose': { hitPoints: 6000, imagePath: 'media/bosses/Moose.png' }, 'Spider Queen': { hitPoints: 2500, imagePath: 'media/bosses/Spider Queen.png' }, 'Crab King': { hitPoints: 95000, imagePath: 'media/bosses/Crab King.png' }, 'Nightmare Werepig': { hitPoints: 10000, imagePath: 'media/bosses/Nightmare Werepig.png' }, 'Shadow Rook': { hitPoints: 10000, imagePath: 'media/bosses/Shadow Rook.png' }, 'Shadow Knight': { hitPoints: 8100, imagePath: 'media/bosses/Shadow Knight.png' }, 'Shadow Bishop': { hitPoints: 7500, imagePath: 'media/bosses/Shadow Bishop.png' },
 }
 
-
 const buffsApp = {
     'Volt': { buffValue: 2.5, imagePath: 'media/buffs/Volt.png' }, 'Ambos': { buffValue: 3, imagePath: 'media/buffs/Ambos.png' },
     'Chili': { buffValue: 1.2, imagePath: 'media/buffs/Chili.png' }
@@ -35,6 +34,7 @@ class Calculadora {
         this.personagem_jogado = "";
         this.arma_usada = "";
         this.buff = "";
+        this.boss_usuario = "";
         this.dano_personagem = 1;
         this.dano_arma = 1;
         this.dano_buff = 1;
@@ -46,6 +46,7 @@ class Calculadora {
         this.personagem_jogado = "";
         this.arma_usada = "";
         this.buff = "";
+        this.boss_usuario = "";
         this.dano_personagem = 1;
         this.dano_arma = 1;
         this.dano_buff = 1;
@@ -63,9 +64,33 @@ class Calculadora {
 
     dano() {
         if (!this.personagem_jogado || !this.arma_usada || !this.buff || !this.boss_usuario) {
-            // Mostrar uma mensagem de erro ou tomar outra ação apropriada
-            alert("Escolha  personagem, arma, buff e boss antes de calcular o dano.");
+
+            const errorCard = document.getElementById("error-card");
+            errorCard.style.display = "flex";
+
+            function setSvgAttributes(elementId, attributeValue, defaultPath, altPath, fillColor) {
+                const element = document.getElementById(elementId);
+                element.setAttribute('d', attributeValue !== "" ? defaultPath : altPath);
+                element.setAttribute('fill', attributeValue !== "" ? fillColor : 'red');
+            }
+
+            const defaultPathPersonagem = 'M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z';
+            const altPathPersonagem = 'M15 8a6.97 6.97 0 0 0-1.71-4.584l-9.874 9.875A7 7 0 0 0 15 8M2.71 12.584l9.874-9.875a7 7 0 0 0-9.874 9.874ZM16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0';
+            const defaultFillColor = '#77ff00';
+
+            setSvgAttributes("path-personagem", this.personagem_jogado, defaultPathPersonagem, altPathPersonagem, defaultFillColor);
+            setSvgAttributes("path-arma", this.arma_usada, defaultPathPersonagem, altPathPersonagem, defaultFillColor);
+            setSvgAttributes("path-buff", this.buff, defaultPathPersonagem, altPathPersonagem, defaultFillColor);
+            setSvgAttributes("path-boss", this.boss_usuario, defaultPathPersonagem, altPathPersonagem, defaultFillColor);
+
+            const fecharErrorCard = document.getElementById("fechar-error-card");
+            fecharErrorCard.addEventListener("click", function () {
+                errorCard.style.display = "none";
+            });
+
+            this.resetarValores();
             return;
+
         }
 
         for (let key in multiplicadorApp) {
@@ -99,19 +124,29 @@ class Calculadora {
         for (let key in chefesApp) {
             if (key.startsWith(this.boss_usuario)) {
                 this.hit_boss = chefesApp[key].hitPoints / this.dano_buff;
+                this.img_boss = chefesApp[key].imagePath;
             }
         }
     }
 
     atualizarResultados(dano_base, dano_buff, hit_boss) {
-        const resultadoTexto = document.getElementById("resultadoTexto");
-        resultadoTexto.innerHTML = `Personagem: ${this.personagem_jogado}<br>Arma: ${this.arma_usada}<br>Buff: ${this.buff}<br>Boss: ${this.boss_usuario}<br>Dano Base: ${dano_base.toFixed(2)}<br>Dano com Buff: ${dano_buff.toFixed(2)}<br>Hit to Kill: ${hit_boss.toFixed(2)}`;
+        const imagemExibida = document.getElementById("img-resultado");
+        const urlImagem = this.img_boss;
+        const hits = document.getElementById("hits");
+        const arma = document.getElementById("arma");
+        const personagem = document.getElementById("personagem");
+        const buff = document.getElementById("buff");
+
+        imagemExibida.src = urlImagem;
+        hits.textContent = `HITS: ${hit_boss.toFixed(2)}`;
+        arma.textContent = `${dano_base}`;
+        personagem.textContent = `${this.personagem_jogado}`;
+        buff.textContent = `${dano_buff}`;
 
         const resultadoDialog = document.getElementById("resultadoDialog");
-        resultadoDialog.style.display = "block";
+        resultadoDialog.style.display = "flex";
         calculadora.resetarValores();
     }
-
 }
 
 const calculadora = new Calculadora();
@@ -119,7 +154,6 @@ const calculadora = new Calculadora();
 // Função para gerar botões para cada opção
 function criarBotoes(containerId, data, clickFunction, buttonClass, imgClass) {
     const container = document.getElementById(containerId);
-
 
     for (let key in data) {
         const button = document.createElement("button");
@@ -149,7 +183,6 @@ criarBotoes("bossesButtons", chefesApp, function (value) {
     calculadora.bosses(value);
 }, "bosses-button", "bosses-img");
 
-
 // Configurar os botões
 const personagemButtons = document.querySelectorAll('.personagens-button button');
 const armaButtons = document.querySelectorAll('.armas-button button');
@@ -159,7 +192,7 @@ const bossesButtons = document.querySelectorAll('.bosses-button button');
 // Adicione um evento de clique a cada botão 
 function adicionarEventoClique(botaoLista) {
     botaoLista.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             botaoLista.forEach(btn => {
                 btn.classList.remove('ativo-hover');
             });

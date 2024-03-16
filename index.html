@@ -10,6 +10,9 @@
 
     <!-- CSS  -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css">
+    <link rel="stylesheet" href="general-styles.css">
+    <link rel="stylesheet" href="modal_buttons.css">
 
     <!-- Favicon  -->
     <link rel="icon" href="media/imgs/dst.ico">
@@ -28,7 +31,6 @@
                     </div>
                 </div>
 
-
                 <div class="telaBoss">
                     <h3>Bosses</h3>
                     <div id="bossesButtons" class="bosses-button"></div>
@@ -45,16 +47,166 @@
                 <div id="buffButtons" class="buffs-button"></div>
             </div>
 
+
+            <div>
             <footer class="mostrarDano">
-                <button class="calcular-button" id="calcularDano">Calcular Dano</button>
+                <button class="calcular-button" type="button" id="calcularDano">
+                    <strong>Calcular Dano</strong>
+                    <div id="container-stars">
+                        <div id="stars"></div>
+                    </div>
+
+                    <div id="glow">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
+                </button>
+
+                <div id="social-media">
+                    <div class="tooltip-container">
+                        <div class="tooltip">
+                            <div class="profile">
+                                <div class="user">
+                                    <div class="img"><img class="img"
+                                            src="https://avatars.githubusercontent.com/u/129862847?v=4"
+                                            alt="Avatar Github" /></div>
+                                    <div class="details">
+                                        <div class="name">Wilson</div>
+                                        <div class="username">@wilsondesouza</div>
+                                    </div>
+                                </div>
+                                <div class="about">30+ Repositories</div>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <a class="icon" href="https://github.com/wilsondesouza" target="_blank">
+                                <div class="layer">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span class="fab fa-github">
+                                        <svg viewBox="0 0 448 512" height="1em">
+                                            <path
+                                                d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="text">GitHub</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </footer>
-            <div id="resultadoDialog" class="dialog">
-                <span id="resultadoTexto"></span>
-                <div><button id="fecharDialog">Fechar</button></div>
+        </div>
+
+            <div class="card" id="resultadoDialog">
+                <div class="top-section">
+                    <div id="img">
+                        <img id="img-resultado" src="https://avatars.githubusercontent.com/u/129862847?v=4" />
+                    </div>
+                </div>
+
+                <div class="bottom-section">
+
+                    <div class="row row1">
+                        <div class="item">
+                            <span class="big-text">Dano Base</span>
+                            <span class="regular-text" id="arma"></span>
+                        </div>
+                        <div class="item">
+                            <span class="big-text">Herói</span>
+                            <span class="regular-text" id="personagem"></span>
+                        </div>
+                        <div class="item">
+                            <span class="big-text">Dano Buff</span>
+                            <span class="regular-text" id="buff"></span>
+                        </div>
+                    </div>
+                    <span class="title" id="hits"></span>
+                </div>
+
+                <div id="button-fechar"><button id="fecharDialog" class="repeat">
+                        <svg class="svg-icon" fill="none" height="20" viewBox="0 0 20 20" width="20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g stroke="#ffffff" stroke-linecap="round" stroke-width="1.5">
+                                <path
+                                    d="m3.33337 10.8333c0 3.6819 2.98477 6.6667 6.66663 6.6667 3.682 0 6.6667-2.9848 6.6667-6.6667 0-3.68188-2.9847-6.66664-6.6667-6.66664-1.29938 0-2.51191.37174-3.5371 1.01468">
+                                </path>
+                                <path
+                                    d="m7.69867 1.58163-1.44987 3.28435c-.18587.42104.00478.91303.42582 1.0989l3.28438 1.44986">
+                                </path>
+                            </g>
+                        </svg>
+                        <span class="lable">Repeat</span>
+                    </button>
+                </div>
             </div>
+
+
+            <div class="card-2" id="error-card">
+                <div class="card__border"></div>
+                <div class="card_title__container">
+                    <span class="card_title">Erro</span>
+                    <p class="card_paragraph">
+                        Por favor, escolha todas as opções necessárias para prosseguir
+                    </p>
+                </div>
+                <hr class="line" />
+                <ul class="card__list">
+                    <li class="card__list_item">
+                        <span class="check">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                class="check_svg">
+                                <path id="path-personagem" fill-rule="evenodd" fill="red"
+                                    d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </span>
+                        <span class="list_text">Personagem</span>
+                    </li>
+                    <li class="card__list_item">
+                        <span class="check">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                class="check_svg">
+                                <path id="path-arma" fill-rule="evenodd" fill="red"
+                                    d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </span>
+                        <span class="list_text">Arma</span>
+                    </li>
+                    <li class="card__list_item">
+                        <span class="check">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                class="check_svg">
+                                <path id="path-buff" fill-rule="evenodd" fill="red"
+                                    d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </span>
+                        <span class="list_text">Buff</span>
+                    </li>
+                    <li class="card__list_item">
+                        <span class="check">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                class="check_svg">
+                                <path id="path-boss" fill-rule="evenodd" fill="red"
+                                    d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </span>
+                        <span class="list_text">Boss</span>
+                    </li>
+                </ul>
+                <button type="button" class="button" id="fechar-error-card">Recomeçar</button>
+            </div>
+
+
         </main>
     </div>
-        <script src="main.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>

@@ -217,7 +217,11 @@ footer.mostrarDano {
 /* Botão GitHub */
 
 div#social-media {
-    margin-top: 3rem;
+    margin-top: 8rem;
+}
+
+#social-media {
+    display: flex !important;
 }
 
 .tooltip-container {

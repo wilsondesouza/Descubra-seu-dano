@@ -20,7 +20,7 @@ const chefesApp = {
 
 const buffsApp = {
     'Volt': { buffValue: 2.5, imagePath: 'media/buffs/Volt.png' }, 'Ambos': { buffValue: 3, imagePath: 'media/buffs/Ambos.png' },
-    'Chili': { buffValue: 1.2, imagePath: 'media/buffs/Chili.png' }
+    'Chili': { buffValue: 1.2, imagePath: 'media/buffs/Chili.png' }, 'None': { buffValue: 1, imagePath: 'media/buffs/None.png' },
 }
 
 const fecharDialog = document.getElementById("fecharDialog");
@@ -96,6 +96,7 @@ class Calculadora {
         for (let key in multiplicadorApp) {
             if (key.startsWith(this.personagem_jogado)) {
                 this.dano_personagem = multiplicadorApp[key].multiplier;
+                this.img_personagem = multiplicadorApp[key].imagePath;
             }
         }
 
@@ -130,17 +131,22 @@ class Calculadora {
     }
 
     atualizarResultados(dano_base, dano_buff, hit_boss) {
-        const imagemExibida = document.getElementById("img-resultado");
-        const urlImagem = this.img_boss;
+        const imagemBoss = document.getElementById("img-resultado");
+        const imagemPersonagem = document.getElementById("img-resultado-2");
+        const urlBoss = this.img_boss;
+        const urlPersonagem = this.img_personagem;
         const hits = document.getElementById("hits");
         const arma = document.getElementById("arma");
         const personagem = document.getElementById("personagem");
+        const boss = document.getElementById("boss");
         const buff = document.getElementById("buff");
 
-        imagemExibida.src = urlImagem;
+        imagemBoss.src = urlBoss;
+        imagemPersonagem.src = urlPersonagem;
         hits.textContent = `HITS: ${hit_boss.toFixed(2)}`;
         arma.textContent = `${dano_base}`;
         personagem.textContent = `${this.personagem_jogado}`;
+        boss.textContent = `${this.boss_usuario}`;
         buff.textContent = `${dano_buff}`;
 
         const resultadoDialog = document.getElementById("resultadoDialog");

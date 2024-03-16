@@ -224,6 +224,10 @@ div#social-media {
     display: flex !important;
 }
 
+#social-media {
+    display: flex !important;
+}
+
 .tooltip-container {
     position: relative;
     cursor: pointer;

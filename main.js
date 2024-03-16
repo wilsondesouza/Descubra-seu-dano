@@ -143,11 +143,12 @@ class Calculadora {
 
         imagemBoss.src = urlBoss;
         imagemPersonagem.src = urlPersonagem;
+
         hits.textContent = `HITS: ${hit_boss.toFixed(2)}`;
-        arma.textContent = `${dano_base}`;
+        arma.textContent = `${dano_base.toFixed(2)}`;
         personagem.textContent = `${this.personagem_jogado}`;
         boss.textContent = `${this.boss_usuario}`;
-        buff.textContent = `${dano_buff}`;
+        buff.textContent = `${dano_buff.toFixed(2)}`;
 
         const resultadoDialog = document.getElementById("resultadoDialog");
         resultadoDialog.style.display = "flex";

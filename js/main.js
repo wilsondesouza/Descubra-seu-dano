@@ -23,11 +23,38 @@ const buffsApp = {
     'Chili': { buffValue: 1.2, imagePath: 'media/buffs/Chili.png' }, 'None': { buffValue: 1, imagePath: 'media/buffs/None.png' },
 }
 
-const fecharDialog = document.getElementById("fecharDialog");
-fecharDialog.addEventListener("click", function () {
-    const resultadoDialog = document.getElementById("resultadoDialog");
-    resultadoDialog.style.display = "none";
-});
+/* Ativar Overlay*/
+const overlay = document.getElementById("overlay");
+const main = document.getElementById("main");
+const telaPersonagem = document.getElementById("telaPersonagem");
+const telaBoss = document.getElementById("telaBoss");
+const right = document.getElementById("asideRight");
+const left = document.getElementById("asideLeft");
+const mostrarDano = document.getElementById("mostrarDano");
+
+
+function showOverlay() {
+    overlay.style.display = "block";
+    right.style.zIndex = "-1";
+    left.style.zIndex = "-1";
+    telaPersonagem.style.zIndex = "-1";
+    telaBoss.style.zIndex = "-1";
+    mostrarDano.style.zIndex = "-1";
+    main.style.position = "fixed";
+    
+}
+
+function hideOverlay() {
+    overlay.style.display = "none";
+    right.style.zIndex = "0";
+    left.style.zIndex = "0";
+    telaPersonagem.style.zIndex = "0";
+    telaBoss.style.zIndex = "0";
+    mostrarDano.style.zIndex = "";
+    main.style.position = "unset";
+}
+
+
 
 class Calculadora {
     constructor() {
@@ -67,6 +94,7 @@ class Calculadora {
 
             const errorCard = document.getElementById("error-card");
             errorCard.style.display = "flex";
+            showOverlay();
 
             function setSvgAttributes(elementId, attributeValue, defaultPath, altPath, fillColor) {
                 const element = document.getElementById(elementId);
@@ -86,6 +114,7 @@ class Calculadora {
             const fecharErrorCard = document.getElementById("fechar-error-card");
             fecharErrorCard.addEventListener("click", function () {
                 errorCard.style.display = "none";
+                hideOverlay();
             });
 
             this.resetarValores();
@@ -152,6 +181,7 @@ class Calculadora {
 
         const resultadoDialog = document.getElementById("resultadoDialog");
         resultadoDialog.style.display = "flex";
+        showOverlay();
         calculadora.resetarValores();
     }
 }
@@ -233,6 +263,12 @@ const calcularDanoButton = document.getElementById("calcularDano");
 calcularDanoButton.addEventListener("click", function () {
     limparAtivoHover();
     calculadora.dano();
+});
+const fecharDialog = document.getElementById("fecharDialog");
+fecharDialog.addEventListener("click", function () {
+    const resultadoDialog = document.getElementById("resultadoDialog");
+    resultadoDialog.style.display = "none";
+    hideOverlay();
 });
 
 

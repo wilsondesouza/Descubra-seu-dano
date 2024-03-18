@@ -1,0 +1,113 @@
+@media (max-width: 375px) {
+    h1 {
+        font-size: 1.53rem;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .telaPersonagem,
+    .telaBoss {
+        width: 85%;
+    }
+
+    .aside-left {
+        position: fixed;
+        top: 30%;
+        left: 0%;
+    }
+
+    #buffButtons {
+        display: contents !important;
+    }
+
+    @media (max-width: 1024px) {
+        .aside-right {
+            left: 92% !important;
+        }
+    }
+
+    .aside-right {
+        position: fixed;
+        top: 3%;
+        left: 94%;
+    }
+
+    #armaButtons {
+        display: contents;
+    }
+
+    @media(min-width:1023px) and (max-width: 1394px) {
+        #interface {
+            display: flex;
+            flex-direction: row !important;
+        }
+
+        .personagens {
+            position: sticky;
+            left: 5%;
+        }
+
+        .bosses {
+            position: sticky;
+            right: 3.5%;
+        }
+
+        .botões {
+            display: flex;
+            flex-direction: row !important;
+            justify-content: center;
+        }
+    }
+
+}
+
+@media (min-width:1395px) and (max-width:1919px) {
+
+    .telaPersonagem,
+    .telaBoss {
+        width: 65%;
+    }
+
+    .aside-left {
+        left: 1%
+    }
+
+    .botões {
+        padding-top: 5rem !important;
+    }
+
+    #social-media {
+        position: absolute;
+        right: 20%;
+        padding: 0rem !important;
+    }
+}
+
+@media (min-width:2750px) {
+    h1, h3, h5 {
+        font-size: 3rem;
+    }
+
+    .aside-right {
+        left: 92%;
+    }
+
+    .botões {
+        padding-top: 5rem !important;
+    }
+
+    #social-media {
+        position: absolute;
+        right: 20%;
+        padding: 0rem !important;
+    }
+
+    img {
+        width: 12.125rem !important;
+        height: 12.125rem !important;
+    }
+    .armas-img {
+        width: 12.125rem !important;
+    }
+}

@@ -3,7 +3,7 @@ button {
     background-color: #202f4f;
     color: #fff;
     border: none;
-    margin: 5px;
+    margin: 0.313rem;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
     border-radius: 10%;
@@ -31,7 +31,6 @@ button {
 
 /* Botão Calcular Dano */
 .calcular-button {
-    margin-left: 30rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,7 +50,7 @@ button {
 
 .calcular-button:hover,
 .calcular-button:focus {
-    box-shadow: 0 0 5px #008cff, 0 0 20px #008cff, 0 0 50px #008cff,
+    box-shadow: 0 0 5px #008cff, 0 0 20px #008cff, 0 0 3.125rem #008cff,
         0 0 100px #008cff;
 }
 
@@ -83,7 +82,7 @@ strong {
 
 .circle {
     width: 100%;
-    height: 30px;
+    height: 1.875rem;
     filter: blur(2rem);
     animation: pulse_3011 4s infinite;
     z-index: -1;
@@ -136,7 +135,7 @@ strong {
 
 #stars::after {
     background-image: radial-gradient(#ffffff 1px, transparent 1%);
-    background-size: 50px 50px;
+    background-size: 3.125rem 3.125rem;
 }
 
 #stars::before {
@@ -151,7 +150,7 @@ strong {
 
 #stars::before {
     background-image: radial-gradient(#ffffff 1px, transparent 1%);
-    background-size: 50px 50px;
+    background-size: 3.125rem 3.125rem;
     opacity: 0.5;
 }
 
@@ -197,7 +196,7 @@ strong {
 
     70% {
         transform: scale(1);
-        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+        box-shadow: 0 0 0 0.625rem rgba(0, 0, 0, 0);
     }
 
     100% {
@@ -215,11 +214,6 @@ footer.mostrarDano {
 
 
 /* Botão GitHub */
-
-div#social-media {
-    margin-top: 8rem;
-}
-
 #social-media {
     display: flex !important;
 }
@@ -232,8 +226,8 @@ div#social-media {
     position: relative;
     cursor: pointer;
     transition: all 0.2s;
-    font-size: 17px;
-    border-radius: 10px;
+    font-size: 1.063rem;
+    border-radius: 0.625rem;
 }
 
 .tooltip {
@@ -241,21 +235,21 @@ div#social-media {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    padding: 10px;
+    padding: 0.625rem;
     opacity: 0;
     pointer-events: none;
     transition: all 0.3s;
-    border-radius: 15px;
+    border-radius: 0.938rem;
     box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
-        inset -5px -5px 15px rgba(255, 255, 255, 0.1),
-        5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+        inset -0.313rem -0.313rem 0.938rem rgba(255, 255, 255, 0.1),
+        -0.313rem -0.313rem 0.938rem rgba(0, 0, 0, 0.3), -0.313rem -0.313rem 0.938rem rgba(255, 255, 255, 0.1);
 }
 
 .profile {
     background: #2a2b2f;
-    border-radius: 10px 15px;
-    padding: 10px;
-    border: 1px solid rgba(11, 63, 95, 1);
+    border-radius: 0.625rem 0.938rem;
+    padding: 0.625rem;
+    border: 0.063rem solid rgba(11, 63, 95, 1);
 }
 
 .tooltip-container:hover .tooltip {
@@ -273,8 +267,8 @@ div#social-media {
 }
 
 .layer {
-    width: 55px;
-    height: 55px;
+    width: 3.438rem;
+    height: 3.438rem;
     transition: transform 0.3s;
 }
 
@@ -329,12 +323,12 @@ div#social-media {
 
 .icon:hover .layer span:nth-child(3) {
     opacity: 0.6;
-    transform: translate(10px, -10px);
+    transform: translate(0.625rem, -0.625rem);
 }
 
 .icon:hover .layer span:nth-child(4) {
     opacity: 0.8;
-    transform: translate(15px, -15px);
+    transform: translate(0.938rem, -0.938rem);
 }
 
 .icon:hover .layer span:nth-child(5) {
@@ -343,7 +337,7 @@ div#social-media {
 }
 
 .layer span.fab {
-    font-size: 30px;
+    font-size: 1.875rem;
     line-height: 64px;
     text-align: center;
     fill: white;
@@ -352,16 +346,16 @@ div#social-media {
 
 .user {
     display: flex;
-    gap: 10px;
+    gap: 0.625rem;
 }
 
 .img {
-    width: 50px;
-    height: 50px;
+    width: 3.125rem;
+    height: 3.125rem;
     font-size: 25px;
     font-weight: 700;
     border: 1px solid white;
-    border-radius: 10px;
+    border-radius: 0.625rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -369,7 +363,7 @@ div#social-media {
 }
 
 .name {
-    font-size: 17px;
+    font-size: 1.063rem;
     font-weight: 700;
     color: #1da1f2;
 }

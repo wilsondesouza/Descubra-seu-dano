@@ -62,9 +62,9 @@
     box-shadow: -10px -10px 0 0 #1b233d;
 }
 
-.card .bottom-section {
+/*.card .bottom-section {
     margin-top: 2rem;
-}
+}*/
 
 .card .bottom-section .title {
     display: block;
@@ -78,22 +78,14 @@
 
 .card .bottom-section .row {
     display: flex;
-    justify-content: space-between;
-    margin-top: 2rem;
+    flex-wrap: wrap;
 }
 
-.card .bottom-section .row .item, .item-img, .item-img-2 {
+.card .bottom-section .row .item{
     flex: 30%;
     text-align: center;
     padding: 5px;
     color: rgba(170, 222, 243, 0.721);
-}
-
-.item-img, .item-img-2 {
-    position: absolute;
-    top: 100%;
-    display: flex;
-    flex-direction: column;
 }
 
 
@@ -161,6 +153,12 @@ button#fecharDialog {
 }
 
 /* Botão Error */
+
+div#error {
+    position: fixed;
+    bottom: 30%;
+    left: 41%;
+}
 .card-2 {
     --white: hsl(0, 0%, 100%);
     --black: hsl(240, 15%, 9%);
@@ -191,7 +189,6 @@ button#fecharDialog {
 .card-2 .card__border {
     overflow: hidden;
     pointer-events: none;
-
     position: absolute;
     z-index: -10;
     top: 50%;
@@ -203,7 +200,6 @@ button#fecharDialog {
     background-image: linear-gradient(0deg,
             hsl(0, 0%, 100%) -50%,
             hsl(0, 0%, 40%) 100%);
-
     border-radius: 1rem;
 }
 
@@ -298,4 +294,5 @@ button#fecharDialog {
     border: 0;
     border-radius: 9999px;
     box-shadow: inset 0 -2px 25px -4px var(--white);
+    
 }

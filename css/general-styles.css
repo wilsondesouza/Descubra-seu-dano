@@ -1,0 +1,79 @@
+body {
+    background-color: #24262a;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+h1,
+h3,
+h5 {
+    color: #fff;
+    margin: .5rem;
+}
+
+#interface {
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.personagens,
+.bosses {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.personagens-img,
+.bosses-img {
+    width: 6.25rem;
+    height: 6.25rem;
+}
+
+#personagemButtons,
+#bossesButtons,
+#armaButtons,
+#buffButtons,
+.mostrarDano,
+.social-media {
+    display: ruby;
+}
+
+.armas-img {
+    width: 3.75rem;
+}
+
+.aside-right,
+.aside-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 0;
+}
+
+.botões {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#social-media {
+    padding: 1rem;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Cor do overlay */
+    display: none;
+    ;
+}

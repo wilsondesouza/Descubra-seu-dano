@@ -155,10 +155,13 @@ button#fecharDialog {
 /* Botão Error */
 
 div#error {
-    position: fixed;
+    display: flex;
+    position: sticky;
     bottom: 30%;
-    left: 41%;
+    justify-content: center;
+
 }
+
 .card-2 {
     --white: hsl(0, 0%, 100%);
     --black: hsl(240, 15%, 9%);

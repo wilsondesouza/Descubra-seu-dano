@@ -1,7 +1,18 @@
+@media (max-width: 374px) {
+    #error {
+        width: 19rem;
+    }
+
+    .card-2 {
+        width: 0rem;
+    }
+}
+
 @media (max-width: 375px) {
     h1 {
         font-size: 1.53rem;
     }
+
 }
 
 @media (min-width: 1024px) {
@@ -85,7 +96,10 @@
 }
 
 @media (min-width:2750px) {
-    h1, h3, h5 {
+
+    h1,
+    h3,
+    h5 {
         font-size: 3rem;
     }
 
@@ -107,6 +121,7 @@
         width: 12.125rem !important;
         height: 12.125rem !important;
     }
+
     .armas-img {
         width: 12.125rem !important;
     }

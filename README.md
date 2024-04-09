@@ -12,7 +12,7 @@ UPDATE: Finalizado a primeira versão funcional do programa com interface gráfi
 
 ### ✔ Downloads
 
-[Calculadora de Dano - DST](https://www.mediafire.com/file/l7da3u7op7d3arb/DescubraSeuDano.rar/file)
+[Calculadora de Dano - DST](https://www.mediafire.com/file/hy01mron4tcek0y/Calculadora_de_Dano.rar/file)
 
 ## 📚 Documentação
 -[Python](https://docs.python.org/3/)
